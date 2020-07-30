@@ -3,7 +3,8 @@
 npm install bcrypt express jsonwebtoken mysql nodemon
 ```
 
-## Run Nodemon
+## Run
 ```bash
 npm run dev
+npm run tunnel
 ```
