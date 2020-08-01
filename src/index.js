@@ -1,7 +1,7 @@
 const express = require('express');
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 
 
@@ -14,5 +14,5 @@ app.get('/', (req,res) => {
 });
 
 app.listen(3000, () => {
-    console.log('Listening on Port 3000');
+    console.log('Listening on Port 3000...');
 })
