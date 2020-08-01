@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const db = require('../../mysql');
+const db = require('../mysql');
 const requireAuth = require('../middlewares/requireAuth');
 
 const router = express.Router();
@@ -23,7 +23,7 @@ router.get('/users', (req, res) => {
             }
         }
     });
-    
+
 });
 
 router.get('/users/:id', (req, res) => {
@@ -44,7 +44,7 @@ router.get('/users/:id', (req, res) => {
             }
         }
     });
-    
+
 });
 
 router.put('/users', (req, res) => {
@@ -79,7 +79,7 @@ router.delete('/users', (req, res) => {
                 return res.status(422).send({ error: 'Something Wrong' });
             }
         }
-    });  
+    });
 });
 
 

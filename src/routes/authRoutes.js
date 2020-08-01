@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const db = require('../../mysql');
+const db = require('../mysql');
 
 const router = express.Router();
 
@@ -21,7 +21,7 @@ router.post('/signup', (req, res) => {
     } catch (err) {
         return res.status(422).send(err.message)
     }
-    
+
 });
 
 router.post('/signin', (req, res) => {
