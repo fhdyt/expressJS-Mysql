@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "tunnel": "ngrok http 3000"
+    "tunnel": "ngrok http 3000",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
