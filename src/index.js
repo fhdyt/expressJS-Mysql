@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.json());
-app.use(authRoutes);
-app.use(profileRoutes);
+// app.use(authRoutes);
+// app.use(profileRoutes);
 
 app.get('/', (req,res) => {
     res.send('Hello World');
