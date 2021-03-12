@@ -5,6 +5,7 @@ var db = mysql.createConnection({
     user: "root",
     password: "fikri",
     database: "WEDDING",
+    insecureAuth : true
     //socketPath: "/opt/lampp/var/mysql/mysql.sock"
 });
 

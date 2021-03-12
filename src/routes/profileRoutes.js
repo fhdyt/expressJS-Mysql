@@ -8,13 +8,22 @@ const router = express.Router();
 router.use(requireAuth);
 
 router.get('/users', (req, res) => {
-    const sql    = "SELECT * FROM USER";
+    const sql    = "SELECT * FROM KONF_WEB";
     db.query(sql, function (error, result, fields){
         if(error){
             console.log(error)
         } else {
             if(result.length > 0)
             {
+            //     const hasil = result.map(function(el) {
+            //     var o = Object.assign({}, el);
+            //     const pembukaan    = "SELECT * FROM KONF_INFORMASI WHERE KONF_LINK='"+el.KONF_LINK+"'";
+            //     const a = db.query(pembukaan, function (error, result_a, fields){
+            //     console.log(result_a[0].KONF_LINK)
+            //     })
+            //    o.pembukaan = a;
+            //     return o;
+               // })
                 return res.send(result);
             }
             else
@@ -81,7 +90,6 @@ router.delete('/users', (req, res) => {
         }
     });
 });
-
 
 
 module.exports = router;
