@@ -7,7 +7,7 @@ router.use(requireAuth);
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads')
+    cb(null, '/uploads')
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now())
@@ -18,14 +18,14 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 router.post('/upload', upload.single('file'), (req, res, next) => {
-  const file = req.file
+  const file = req
   console.log(file)
 //   if (!file) {
 //     const error = new Error('Please upload a file')
 //     error.httpStatusCode = 400
 //     return next(error)
 //   }
-    res.send(file)
+    res.json(file)
   
 })
 
