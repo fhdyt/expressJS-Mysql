@@ -13,7 +13,6 @@ module.exports = (req, res, next) => {
     if (err) {
       return res.status(401).send({ error: 'You must be logged in.' });
     }
-    console.log(req)
     next();
   });
 };

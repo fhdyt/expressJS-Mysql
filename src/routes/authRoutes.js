@@ -1,14 +1,14 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const db = require('../mysql');
-
+const md5 = require('md5');
 const router = express.Router();
 
 router.post('/signup', (req, res) => {
     const { email,password } = req.body;
     try{
         const sql      = "INSERT INTO USER (USER_EMAIL, USER_PASSWORD) values (?,?)";
-        db.query(sql,[ email, password ],function (error, result, fields){
+        db.query(sql,[ email, md5(password) ],function (error, result, fields){
         if(error){
             console.log(error);
             res.send(error);
@@ -37,7 +37,7 @@ router.post('/signin', (req, res) => {
                 console.log(error)
             }else{
                 if(result.length >0) {
-                    if(result[0].USER_PASSWORD != password) {
+                    if(result[0].USER_PASSWORD != md5(password)) {
                         return res.status(422).send({ error: 'Wrong Password' });
                     }
                     else {

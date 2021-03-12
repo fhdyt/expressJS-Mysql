@@ -4,7 +4,7 @@ var db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "fikri",
-    database: "SAMBU",
+    database: "WEDDING",
     //socketPath: "/opt/lampp/var/mysql/mysql.sock"
 });
 
